@@ -950,7 +950,7 @@ class JsonRpcServer {
     const obj = {
       number: block.height,
       hash: block.hash().toHex(),
-      hex: block.serialize().toHex(),
+      hex: Nimiq.BufferUtils.toHex(block.serialize()),
       pow: (await block.pow()).toHex(),
       parentHash: block.prevHash.toHex(),
       nonce: block.nonce,
